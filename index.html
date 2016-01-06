@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
+		<title> Acceleration Structure for Raytracer </title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<h1> Acceleration Structure for Raytracer </h1>
+		<p> Wendy Chen <br>
+			Advising Professor: Holly Rushmeier <br>
+			Fall 2015
+		</p>
+		<p>
+			<b> Abstract: </b>
+		</p>
+		<p>
+			The focus of this CPSC 290 project was to add further modifications to a raytracer base, namely, to implement an acceleration structure.  I chose to implement a hierarchal axis-aligned bounding box system, partitioning space using a k-d tree.
+		</p>
+		<p>  
+			Unaccelerated raytracing shoots a ray through each pixel and iterates through all objects in the scene, checking for the closest object intersected by the ray.  However, each pixel does not necessarily contain an object, and complicated scenes can contain thousands of objects, so the process of iterating through all objects per pixel becomes slow very quickly.  To accelerate the process, we would like to reduce how many intersections between the ray and objects we check for at each pixel.  By subdividing the space into bounding boxes, we can assign an appropriate list of objects found in each bounding box.  Thus, for each ray shot through each pixel, we first traverse the bounding boxes and check if they contain objects.  If the bounding box intersected by the ray doesn’t contain any objects, we can quickly move on to the next pixel.  If the bounding box does contain objects, we can check the list of objects contained in the bounding box instead of the list of objects contained in the entire scene.
+		</p>
+		<p>
+			In addition to supporting acceleration, my code supports complex geometries and shading for additional materials, like glass.  In order to support OBJ file importation, I wrote a Python script to parse OBJ files taken from Blender into a JavaScript-friendly format.  In order to support glass materials, I modified the code to account for ray refraction.  Caustics, however, are not accounted for.
+		</p>
+
+		<b> Links: </b>
+		<br>
+		<a href="gallery.html"> Image Gallery (pretty and high res) </a>
+		<br>
+		<a href="proposal.pdf"> Initial Project Proposal </a>
+		<br>
+		<a href="report.pdf"> Final Project Report </a>
+		<br>
+		<a href="https://github.com/vverovvero/Accelerated-Raytracer"> Source 	Code </a>
+		<br>
+		<a href="http://vverovvero.github.io/Accelerated-Raytracer/"> Demo!  You try! </a>
+
+	<body>
+</html>
+
