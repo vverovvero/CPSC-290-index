@@ -1,5 +1,5 @@
 # CPSC-290-index
-documentation of accelerated raytracer project
+Documentation of accelerated raytracer project, Fall 2015.
 
 Link to index page:
 
